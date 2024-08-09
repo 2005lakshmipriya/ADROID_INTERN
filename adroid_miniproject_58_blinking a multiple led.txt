@@ -1,0 +1,24 @@
+void setup() {
+  // Set pins 8, 9, 10 as output pins
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+}
+
+void loop() {
+  // Turn on all LEDs one by one
+  digitalWrite(8, HIGH); // Turn on LED connected to pin 8
+  delay(500);            // Wait for 0.5 second
+  digitalWrite(9, HIGH); // Turn on LED connected to pin 9
+  delay(500);
+  digitalWrite(10, HIGH); // Turn on LED connected to pin 10
+  delay(500);
+
+  // Turn off all LEDs one by one
+  digitalWrite(8, LOW);  // Turn off LED connected to pin 8
+  delay(500);
+  digitalWrite(9, LOW);  // Turn off LED connected to pin 9
+  delay(500);
+  digitalWrite(10, LOW); // Turn off LED connected to pin 10
+  delay(500);
+}
