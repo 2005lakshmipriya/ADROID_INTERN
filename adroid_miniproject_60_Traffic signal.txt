@@ -1,0 +1,43 @@
+// Define pin numbers for RGB LED
+const int redPin = 2;
+const int greenPin = 3;
+const int bluePin = 4;
+
+// Define timings for each light
+const int redDelay = 5000;    // 5 seconds for red
+const int greenDelay = 5000;  // 5 seconds for green
+const int yellowDelay = 2000; // 2 seconds for yellow
+
+void setup() {
+  // Initialize LED pins as outputs
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+
+  // Turn off all LEDs initially
+  analogWrite(redPin, 0);
+  analogWrite(greenPin, 0);
+  analogWrite(bluePin, 0);
+}
+
+void loop() {
+  // Red Light
+  analogWrite(redPin, 255);   // Turn on red LED
+  analogWrite(greenPin, 0);   // Turn off green LED
+  analogWrite(bluePin, 0);    // Turn off blue LED
+  delay(redDelay);            // Wait for red light duration
+
+  // Green Light
+  analogWrite(redPin, 0);     // Turn off red LED
+  analogWrite(greenPin, 255); // Turn on green LED
+  analogWrite(bluePin, 0);    // Turn off blue LED
+  delay(greenDelay);          // Wait for green light duration
+
+  // Yellow Light (Mixing Red and Green)
+  analogWrite(redPin, 255);   // Turn on red LED
+  analogWrite(greenPin, 255); // Turn on green LED
+  analogWrite(bluePin, 0);    // Turn off blue LED
+  delay(yellowDelay);         // Wait for yellow light duration
+
+  // Repeat the cycle
+}
